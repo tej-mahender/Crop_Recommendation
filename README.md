@@ -2,7 +2,9 @@
 
 > Empowering farmers with AI to make data-driven crop choices and estimate yields efficiently.
 
-This machine learning project aims to empower farmers by providing intelligent crop recommendations and predicting expected crop yields based on soil and climate data. The system leverages classification and regression algorithms to enhance decision-making and support sustainable agricultural practices.
+This machine learning project aims to empower farmers by providing intelligent crop recommendations and predicting expected crop yields based on soil and climate data. The system leverages classification and regression algorithms to enhance decision-making and support sustainable agricultural practices
+
+**Documentation**: [CropRecommendation and Yield Prediction](https://www.dropbox.com/scl/fi/8mmwjllkaxswwjy71d5vj/CropRecommendation-YieldPrediction.pdf?rlkey=e164gahq1sfl2xyzzdq0zce9i&st=29pqs0yg&dl=0)
 
 ## 📌 Overview
 

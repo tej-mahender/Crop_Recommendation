@@ -4,3 +4,5 @@ pydantic
 flask
 numpy
 pandas
+gunicorn
+flask-cors

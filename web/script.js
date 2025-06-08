@@ -1,20 +1,28 @@
-document.getElementById('yield-form').addEventListener('submit', async (e) => {
+document.getElementById('cropForm').addEventListener('submit', async (e) => {
   e.preventDefault();
+  const form = e.target;
 
-  const feature1 = parseFloat(document.getElementById('feature1').value);
-  const feature2 = parseFloat(document.getElementById('feature2').value);
-  const feature3 = parseFloat(document.getElementById('feature3').value);
+  const data = {
+    N: parseInt(form.N.value),
+    P: parseInt(form.P.value),
+    K: parseInt(form.K.value),
+    temperature: parseFloat(form.temperature.value),
+    humidity: parseFloat(form.humidity.value),
+    ph: parseFloat(form.ph.value),
+    rainfall: parseFloat(form.rainfall.value),
+  };
+  console.log(data);
 
-  const response = await fetch('http://localhost:8000/predict/yield', {
+  const response = await fetch('http://127.0.0.1:5000/recommend-crop', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ feature1, feature2, feature3 }),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
   });
 
-  if (response.ok) {
-    const data = await response.json();
-    document.getElementById('yield-result').textContent = `Predicted Yield: ${data.predicted_yield}`;
-  } else {
-    document.getElementById('yield-result').textContent = 'Error in prediction.';
-  }
+  const result = await response.json();
+  document.getElementById('result').innerText = result.crop
+    ? `✅ Recommended Crop: ${result.crop}`
+    : `❌ ${result.error}`;
 });

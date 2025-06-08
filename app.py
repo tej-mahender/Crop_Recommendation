@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import numpy as np
 import pandas as pd
 import pickle
@@ -8,6 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 
 
 app = Flask(__name__)
+CORS(app)
 
 # ========== 🔹 Load Models & Scalers ==========
 # Crop Recommendation
@@ -91,8 +93,9 @@ def predict_yield():
             return jsonify({"error": f"Missing data. Required keys: {required_keys}"}), 400
 
         # Validate season and crop
-        season = data['season'].strip()
-        crop = data['crop'].strip().lower()
+        crop = request.json.get("crop", "").strip().lower()
+        season = request.json.get("season", "").strip().title()
+
         
         if season not in label_encoders['Season'].classes_:
             return jsonify({"error": f"Invalid season. Available: {list(label_encoders['Season'].classes_)}"}), 400

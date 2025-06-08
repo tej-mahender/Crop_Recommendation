@@ -1,55 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f9f0;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .container {
-    max-width: 500px;
-    background: #fff;
-    padding: 30px;
-    margin: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 15px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #4CAF50;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 6px;
-  }
-  
-  button:hover {
-    background: #45a049;
-  }
-  
-  #result {
-    margin-top: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2e7d32;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.form-card h2 {
+  margin-top: 0;
+  color: #388e3c;
+}
+
+form input, form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #388e3c;
+}
+
+.result {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2e7d32;
+}

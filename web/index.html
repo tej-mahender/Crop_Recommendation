@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crop Recommendation</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <title>Smart Agriculture System</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="container">
-    <h1>🌾 Crop Recommendation System</h1>
-    <form id="cropForm">
-      <label>Nitrogen (N): <input type="number" name="N" required /></label>
-      <label>Phosphorus (P): <input type="number" name="P" required /></label>
-      <label>Potassium (K): <input type="number" name="K" required /></label>
-      <label>Temperature (°C): <input type="number" name="temperature" required /></label>
-      <label>Humidity (%): <input type="number" name="humidity" required /></label>
-      <label>pH: <input type="number" step="0.01" name="ph" required /></label>
-      <label>Rainfall (mm): <input type="number" name="rainfall" required /></label>
-      <button type="submit">Get Recommendation</button>
-    </form>
+    <h1>🌾 Smart Agriculture Dashboard</h1>
+    
+    <div class="form-card">
+      <h2>Crop Recommendation</h2>
+      <form id="cropForm">
+        <input type="number" name="N" placeholder="Nitrogen (N)" required />
+        <input type="number" name="P" placeholder="Phosphorus (P)" required />
+        <input type="number" name="K" placeholder="Potassium (K)" required />
+        <input type="number" name="temperature" step="0.1" placeholder="Temperature (°C)" required />
+        <input type="number" name="humidity" step="0.1" placeholder="Humidity (%)" required />
+        <input type="number" name="ph" step="0.1" placeholder="pH Level" required />
+        <input type="number" name="rainfall" step="0.1" placeholder="Rainfall (mm)" required />
+        <button type="submit">Recommend Crop</button>
+        <div id="cropResult" class="result"></div>
+      </form>
+    </div>
 
-    <div id="result"></div>
+    <div class="form-card">
+      <h2>Companion Crop Finder</h2>
+      <form id="companionForm">
+        <input type="text" name="crop" placeholder="Enter crop name (e.g., rice)" required />
+        <button type="submit">Find Companions</button>
+        <div id="companionResult" class="result"></div>
+      </form>
+    </div>
+
+    <div class="form-card">
+      <h2>Yield Prediction</h2>
+      <form id="yieldForm">
+        <input type="number" name="crop_year" placeholder="Crop Year (e.g., 2024)" required />
+        <input type="text" name="season" placeholder="Season (e.g., Kharif)" required />
+        <input type="text" name="crop" placeholder="Crop (e.g., rice)" required />
+        <input type="number" step="0.1" name="area" placeholder="Area (hectare)" required />
+        <button type="submit">Predict Yield</button>
+        <div id="yieldResult" class="result"></div>
+      </form>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
